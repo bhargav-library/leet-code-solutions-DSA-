@@ -12,3 +12,17 @@ Output:5
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 – 1 = 5.
 */
 
+var maxProfit = function(prices) {
+    let maxProfit = 0;
+    let minPrice=prices[0];
+    for(let i=0;i<prices.length;i++){
+        if (prices[i]<minPrice){
+            minPrice=prices[i];
+    }
+    let profit = prices[i]-minPrice;
+    if(profit>maxProfit){
+    maxProfit =profit;
+    }
+    }
+    return maxProfit;
+};
