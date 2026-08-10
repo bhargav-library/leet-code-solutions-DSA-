@@ -10,24 +10,27 @@ Example 1:
 
 Input: nums = [1,2,3,4]
 Output: [24,12,8,6]*/
-
 var productExceptSelf = function(nums) {
-    const result = new Array(nums.length);
+ const n = nums.length;
 
-    result[0] = 1;
+    const left = new Array(n);
+    const right = new Array(n);
+    const result = new Array(n);
 
-    // Left products
-    for (let i = 1; i < nums.length; i++) {
-        result[i] = result[i - 1] * nums[i - 1];
+    left[0] = 1;
+    for (let i = 1; i < n; i++) {
+        left[i] = left[i - 1] * nums[i - 1];
     }
 
-    // Right products
-    let rightProduct = 1;
-
-    for (let i = nums.length - 1; i >= 0; i--) {
-        result[i] *= rightProduct;
-        rightProduct *= nums[i];
+    right[n - 1] = 1;
+    for (let i = n - 2; i >= 0; i--) {
+        right[i] = right[i + 1] * nums[i + 1];
     }
 
-    return result;
-};
+    for (let i = 0; i < n; i++) {
+        result[i] = left[i] * right[i];
+    }
+
+    return result;   
+        
+    }
