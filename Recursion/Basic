@@ -1,4 +1,4 @@
-Recursion
+/*Recursion
 Recursion is a technique where a function calls itself to solve a problem by breaking it down into smaller sub-problems.
 
 Base Condition:
@@ -16,7 +16,7 @@ Time Complexity: O(n)
 one function call per number from n to 1.
 
 Space Complexity: O(n)
-Due to recursive call stack frames.
+Due to recursive call stack frames.*/
 
 function printDescending(num) {
     if (num === 0) return;
