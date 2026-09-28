@@ -15,3 +15,11 @@ function isPalindrome(num) {
 
 console.log(isPalindrome(121)); // true
 console.log(isPalindrome(123)); // false
+
+/*Remember these three operations:
+
+% 10 → Extract the last digit.
+
+reversed * 10 + digit → Append that digit to the reversed number.
+
+Math.floor(num / 10) → Remove the last digit from the original number.*/
