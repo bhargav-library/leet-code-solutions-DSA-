@@ -19,7 +19,8 @@ var reverse = function(x) {
     rev = rev * 10 + last;
     x = Math.floor(x / 10);
   }
-  if (rev > 2**31 - 1) return 0;
+  let limit = Math.pow(2,32);
+  if (rev < -limit||rev > limit)return 0;
   return xCopy < 0 ? -rev : rev;
 };
 
